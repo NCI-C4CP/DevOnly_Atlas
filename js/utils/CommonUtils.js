@@ -190,7 +190,10 @@ define([
 		});
 	}
 	const escapeTooltip = function(tooltipText) {
-		return tooltipText.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+		return tooltipText
+			.replace(/\\/g, '\\\\') // Escape backslashes
+			.replace(/'/g, "\\'")  // Escape single quotes
+			.replace(/"/g, '&quot;'); // Escape double quotes
 	}
 
 	const getSelectedConcepts = (conceptList) => {
