@@ -5,7 +5,7 @@ define(['knockout'], function (ko) {
             read: target,  //always return the original observables value
             write: function(newValue) {
                 const isNumeric = RegExp('^-?[0-9]*(?:\.[0-9]+)?$');
-                const isFloat = RegExp('^-?[0-9]*?\.[0-9]*$');
+                const isFloat = RegExp('^-?[0-9]*?\\.[0-9]*$');
                 const isFloatWithNoMantissa = RegExp('^-?[0-9]\\.$');
                 const isFloatWithNoLeadingDigits = RegExp('^-?\.[0-9]*?$');
                 const hasCharacters = RegExp('.*[a-zA-Z]+.*');
